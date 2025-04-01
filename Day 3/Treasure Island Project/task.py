@@ -1,3 +1,5 @@
+from http.cookiejar import uppercase_escaped_char
+
 print(r'''
 *******************************************************************************
           |                   |                  |                     |
@@ -22,3 +24,21 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
+
+q1 = input('you\'re at a crossroad, where do you want to go? Type "left" or "right"')
+if q1.upper() == "LEFT":
+    q2 = input("swim or wait?")
+    if q2.upper() == "WAIT":
+        q3 = input("Which door?")
+        if q3.upper() == "YELLOW":
+            print("You Win!")
+        elif q3.upper() == "RED":
+            print("Burned by fire. Game Over.")
+        elif q3.upper() == "BLUE":
+            print("Eaten by beasts. Game Over.")
+        else :
+            print("Game Over.")
+    else:
+        print("Attacked by trout. Game Over.")
+else:
+    print("Fall into a hole. Game Over.")
